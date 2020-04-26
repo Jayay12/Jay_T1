@@ -1,4 +1,28 @@
 <changelog><commit>
+					<time>1587945027</time>
+					<sha1>a031df1d8c9a56b167186d41bc0c481b11c72905</sha1>
+					<author>Jay.Byeun</author>
+					<branches>refs/heads/master</branches>
+					<msg>fourth commit
+
+edited src.xml so that it includes .gitignore</msg>
+				</commit><commit>
+					<time>1587943982</time>
+					<sha1>c27d35e3eecc8d5d5ecfa8e8d5212486f128f4bb</sha1>
+					<author>Jay.Byeun</author>
+					<branches>refs/heads/master</branches>
+					<msg>third commit
+
+added mainclass and addClasspath with true but it didn't run as package</msg>
+				</commit><commit>
+					<time>1587942102</time>
+					<sha1>954ab8658eb4c25ed00deaad9b1031b96e1b5284</sha1>
+					<author>Jay.Byeun</author>
+					<branches>refs/heads/master</branches>
+					<msg>second commit
+
+run as compile, test and package. It was successfully done.</msg>
+				</commit><commit>
 					<time>1587942022</time>
 					<sha1>b3cbb458869ef14ec9f64a25a671250f5328559b</sha1>
 					<author>Jay.Byeun</author>
