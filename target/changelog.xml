@@ -1,0 +1,9 @@
+<changelog><commit>
+					<time>1587942022</time>
+					<sha1>b3cbb458869ef14ec9f64a25a671250f5328559b</sha1>
+					<author>Jay.Byeun</author>
+					<branches>refs/heads/master</branches>
+					<msg>first commit
+
+made maven test with pom.xml</msg>
+				</commit></changelog>
