@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import javax.imageio.*;
+import javax.imageio.IIOException;
 import javax.imageio.metadata.IIOMetadata;
 import javax.imageio.plugins.jpeg.JPEGImageWriteParam;
 import javax.imageio.stream.ImageInputStream;
@@ -125,26 +125,26 @@ public class GeneratorTest {
   }
 
   @Test
-  public void testRotateImage_RotateImage0() {
+  public void testRotateImageRotateImage0() {
     this.rotatedImageTestResult = this.generator.rotateImage(this.testImage, 0);
 
     assertTrue(imageEquals(this.testImage, this.rotatedImageTestResult));
   }
 
   @Test
-  public void testRotateImage_RotateNull0() {
+  public void testRotateImageRotateNull0() {
     this.rotatedImageTestResult = this.generator.rotateImage(null, 0);
 
     assertNull(this.rotatedImageTestResult);
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testRotateImage_Rotate042() {
+  public void testRotateImageRotate042() {
     this.generator.rotateImage(this.testImage, 0.42);
   }
 
   @Test
-  public void testRotateImage_Rotate90() {
+  public void testRotateImageRotate90() {
     this.rotatedImageTestResult = this.generator.rotateImage(this.testImage, Generator.ROTATE_90);
 
     assertEquals(this.testImage.getHeight(), this.rotatedImageTestResult.getWidth());
@@ -158,7 +158,7 @@ public class GeneratorTest {
   }
 
   @Test
-  public void testRotateImage_Rotate270() {
+  public void testRotateImageRotate270() {
     this.rotatedImageTestResult = this.generator.rotateImage(this.testImage, Generator.ROTATE_270);
 
     assertEquals(this.testImage.getHeight(), this.rotatedImageTestResult.getWidth());
@@ -172,7 +172,7 @@ public class GeneratorTest {
   }
 
   @Test
-  public void testRotateImage_RotateM90() {
+  public void testRotateImageRotateM90() {
     this.rotatedImageTestResult = this.generator.rotateImage(this.testImage, Math.toRadians(-90));
 
     assertEquals(this.testImage.getHeight(), this.rotatedImageTestResult.getWidth());
@@ -186,7 +186,7 @@ public class GeneratorTest {
   }
 
   @Test
-  public void testRotateImage_RotateM270() {
+  public void testRotateImageRotateM270() {
     this.rotatedImageTestResult = this.generator.rotateImage(this.testImage, Math.toRadians(-270));
 
     assertEquals(this.testImage.getHeight(), this.rotatedImageTestResult.getWidth());

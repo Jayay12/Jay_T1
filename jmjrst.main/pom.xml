@@ -10,6 +10,11 @@
 
   <dependencies>
   	<dependency>
+  	<groupId>org.mockito</groupId>
+  	<artifactId>mockito-all</artifactId>
+  	</dependency>
+  	
+  	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
   	</dependency>
@@ -17,6 +22,15 @@
   
   <build>
   	<plugins>
+  		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>3.1.1</version>
+				<configuration>
+					<consoleOutput>true</consoleOutput>
+					<configLocation>${basedir}/src/test/resources/checkstyle_swt1.xml</configLocation>
+				</configuration>
+			</plugin>
   		<plugin>
   			<groupId>org.apache.maven.plugins</groupId>
   			<artifactId>maven-jar-plugin</artifactId>
@@ -31,4 +45,5 @@
   		</plugin>
   	</plugins>
   </build>
+
 </project>
