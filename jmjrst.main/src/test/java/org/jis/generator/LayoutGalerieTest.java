@@ -22,6 +22,8 @@ public class LayoutGalerieTest {
 	private LayoutGalerie galerieUnderTest;
 	private File fromFile;
 	private File toFile;
+	private File sourceDir;
+	private File targetDir;
 
 
 	//private LayoutGalerie copyDirTest; 
@@ -64,8 +66,8 @@ public class LayoutGalerieTest {
 	}
 	@Test
 	public void testCopyDir() throws IOException, FileNotFoundException {
-		File sourceDir = new File("");
-		File targetDir = new File("");
+		sourceDir = new File("");
+		targetDir = new File("");
 		if (sourceDir.exists() && targetDir.exists()) {
 		galerieUnderTest.copyDir(sourceDir, targetDir);
 		assertTrue(targetDir.exists());
@@ -87,4 +89,37 @@ public class LayoutGalerieTest {
 			assertTrue(file.exists());
 		}
 }
+	@Test
+	public void testGetAccessToSourceFile() throws IOException {
+		String sour = "";
+		URL resource = getClass().getResource(sour);
+		if (resource != null) {
+			File file = new File(resource.getFile());
+			if (file.exists()) {
+			file.setReadable(true);
+			}
+			
+		}
+		/*
+		String name = null;
+		ClassLoader classLoader = getClass().getClassLoader();
+		URL resource = classLoader.getResource(name);
+		if (resource != null) {
+			return new File(resource.getFile());
+		} else {
+			return null;
+		}*/
+	}
+	
+	@Test
+	public void testSetAccessToTargetFile() throws IOException {
+		String tar = "";
+		URL url = getClass().getResource(tar);
+		if (url != null) {
+			File file = new File(url.getFile());
+			if (file.exists()) {
+				file.setWritable(false);
+			} 
+		}
+	}
 }
