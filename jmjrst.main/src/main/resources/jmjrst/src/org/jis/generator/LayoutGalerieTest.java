@@ -1,6 +1,7 @@
 package org.jis.generator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -20,20 +21,20 @@ import junit.framework.TestCase;
 public class LayoutGalerieTest {
 	
 	private LayoutGalerie galerieUnderTest;
+	
 	private File fromFile;
 	private File toFile;
 
 
-	//private LayoutGalerie copyDirTest; 
+	private LayoutGalerie copyDirTest; 
 		
 	/**
 	 * Test method for {@link org.jis.generator.LayoutGalerie#copyFile(File, File)}.
 	 */
 	@Test
 	public final void testCopyFile() throws URISyntaxException {
-		File file = new File("");
-		//galerieUnderTest = new LayoutGalerie();
-		if (file.exists()) {
+		
+		galerieUnderTest = new LayoutGalerie();
 		try {
 			final File resourceFolder = new File(this.getClass().getResource(File.separator).toURI());
 			fromFile = new File(resourceFolder, "from");
@@ -59,32 +60,22 @@ public class LayoutGalerieTest {
 		 catch (IOException | URISyntaxException e) {
 			fail();
 		 }
-		}
 		
 	}
 	@Test
 	public void testCopyDir() throws IOException, FileNotFoundException {
+		copyDirTest = new LayoutGalerie();
 		File sourceDir = new File("");
 		File targetDir = new File("");
-		if (sourceDir.exists() && targetDir.exists()) {
-		galerieUnderTest.copyDir(sourceDir, targetDir);
+		this.copyDirTest = this.galerieUnderTest.copyDir(sourceDir, targetDir);
 		assertTrue(targetDir.exists());
-		}
 	}
 	
 	@Test
-	public void testNonExistingFile() throws IOException, FileNotFoundException {
-		File file = new File("");
-		if (!file.exists()) {
-			assertEquals("There is no such file", fromFile, toFile);
-		}
+	public void testExistingFile() throws IOException, FileNotFoundException {
+		String files = null;
+		File file = new File(files);
+		assertNull(file.exists());
 	}
-	@Test
-	public void testExistenceCheck() throws FileNotFoundException, IOException {
-		File file = new File("");
-		if (file.exists()) {
-			galerieUnderTest.copyDir(fromFile, toFile);
-			assertTrue(file.exists());
-		}
-}
+	
 }
