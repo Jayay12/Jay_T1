@@ -1,4 +1,20 @@
 <changelog><commit>
+					<time>1587947663</time>
+					<sha1>8209c283db0e90f3a908a857633fe95be03bb7fa</sha1>
+					<author>Jay.Byeun</author>
+					<branches>refs/heads/master</branches>
+					<msg>sixth commit
+
+run checkstyle and corrected several errors</msg>
+				</commit><commit>
+					<time>1587945349</time>
+					<sha1>af9324f64948dbf744ed98ac977eae2cd3628b04</sha1>
+					<author>Jay.Byeun</author>
+					<branches>refs/heads/master</branches>
+					<msg>fifth commit
+
+target directory is not in Git's version control</msg>
+				</commit><commit>
 					<time>1587945027</time>
 					<sha1>a031df1d8c9a56b167186d41bc0c481b11c72905</sha1>
 					<author>Jay.Byeun</author>
