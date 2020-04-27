@@ -8,6 +8,13 @@
   <groupId>swt1.ub1.a1</groupId>
   <artifactId>2316532</artifactId>
   
+  <dependencies>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  	</dependency>
+  </dependencies>
+  
   <build>
   	<plugins>
   		<plugin>
