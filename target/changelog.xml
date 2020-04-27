@@ -1,8 +1,16 @@
 <changelog><commit>
+					<time>1587948555</time>
+					<sha1>48d8f7e6586552a06e00ffb4d61f792aa4f89808</sha1>
+					<author>Jay.Byeun</author>
+					<branches>refs/heads/master,refs/heads/Test-for-the-tester-creation</branches>
+					<msg>seventh commit
+
+completing Aufgabe1.1</msg>
+				</commit><commit>
 					<time>1587947663</time>
 					<sha1>8209c283db0e90f3a908a857633fe95be03bb7fa</sha1>
 					<author>Jay.Byeun</author>
-					<branches>refs/heads/master</branches>
+					<branches>refs/heads/master,refs/heads/Test-for-the-tester-creation</branches>
 					<msg>sixth commit
 
 run checkstyle and corrected several errors</msg>
@@ -10,7 +18,7 @@ run checkstyle and corrected several errors</msg>
 					<time>1587945349</time>
 					<sha1>af9324f64948dbf744ed98ac977eae2cd3628b04</sha1>
 					<author>Jay.Byeun</author>
-					<branches>refs/heads/master</branches>
+					<branches>refs/heads/master,refs/heads/Test-for-the-tester-creation</branches>
 					<msg>fifth commit
 
 target directory is not in Git's version control</msg>
@@ -18,7 +26,7 @@ target directory is not in Git's version control</msg>
 					<time>1587945027</time>
 					<sha1>a031df1d8c9a56b167186d41bc0c481b11c72905</sha1>
 					<author>Jay.Byeun</author>
-					<branches>refs/heads/master</branches>
+					<branches>refs/heads/master,refs/heads/Test-for-the-tester-creation</branches>
 					<msg>fourth commit
 
 edited src.xml so that it includes .gitignore</msg>
@@ -26,7 +34,7 @@ edited src.xml so that it includes .gitignore</msg>
 					<time>1587943982</time>
 					<sha1>c27d35e3eecc8d5d5ecfa8e8d5212486f128f4bb</sha1>
 					<author>Jay.Byeun</author>
-					<branches>refs/heads/master</branches>
+					<branches>refs/heads/master,refs/heads/Test-for-the-tester-creation</branches>
 					<msg>third commit
 
 added mainclass and addClasspath with true but it didn't run as package</msg>
@@ -34,7 +42,7 @@ added mainclass and addClasspath with true but it didn't run as package</msg>
 					<time>1587942102</time>
 					<sha1>954ab8658eb4c25ed00deaad9b1031b96e1b5284</sha1>
 					<author>Jay.Byeun</author>
-					<branches>refs/heads/master</branches>
+					<branches>refs/heads/master,refs/heads/Test-for-the-tester-creation</branches>
 					<msg>second commit
 
 run as compile, test and package. It was successfully done.</msg>
@@ -42,7 +50,7 @@ run as compile, test and package. It was successfully done.</msg>
 					<time>1587942022</time>
 					<sha1>b3cbb458869ef14ec9f64a25a671250f5328559b</sha1>
 					<author>Jay.Byeun</author>
-					<branches>refs/heads/master</branches>
+					<branches>refs/heads/master,refs/heads/Test-for-the-tester-creation</branches>
 					<msg>first commit
 
 made maven test with pom.xml</msg>
