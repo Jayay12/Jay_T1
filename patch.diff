@@ -1,0 +1,18 @@
+From 88049f8b76f380d01c17842f6b6bbc011e8cf3c0 Mon Sep 17 00:00:00 2001
+From: "Jay.Byeun" <jayay.byeun@gmail.com>
+Date: Wed, 29 Apr 2020 11:43:40 +0200
+Subject: [PATCH] commit before patch file
+
+I try to patch file LayoutGalerie.java
+---
+ .../org/jis/generator/LayoutGalerie.java}                         | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename jmjrst.main/src/test/{resources/LayoutGalerie.patch => java/org/jis/generator/LayoutGalerie.java} (100%)
+
+diff --git a/jmjrst.main/src/test/resources/LayoutGalerie.patch b/jmjrst.main/src/test/java/org/jis/generator/LayoutGalerie.java
+similarity index 100%
+rename from jmjrst.main/src/test/resources/LayoutGalerie.patch
+rename to jmjrst.main/src/test/java/org/jis/generator/LayoutGalerie.java
+-- 
+2.20.1
+

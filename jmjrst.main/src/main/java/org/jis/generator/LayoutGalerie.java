@@ -546,8 +546,11 @@ public class LayoutGalerie {
     }
   }
 
+  //amended method copyFile to copy file from source file to target file
   public void copyFile(File file, File ziel) throws FileNotFoundException, IOException
   {
+	if (file.exists()) {
+		ziel.delete();
     in = new BufferedInputStream(new FileInputStream(file));
     out = new BufferedOutputStream(new FileOutputStream(ziel, true));
     int bytes = 0;
@@ -555,8 +558,11 @@ public class LayoutGalerie {
     {
       out.write(bytes);
     }
+    out.flush();
+    
     in.close();
     out.close();
+	  }
   }
 
   private String createTitle(String filename)
