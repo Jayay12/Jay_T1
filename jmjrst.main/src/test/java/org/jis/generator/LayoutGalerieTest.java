@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -149,18 +150,46 @@ public class LayoutGalerieTest {
 	 * Test method for write access to target files
 	 * 
 	 * @throws IOException
-	 * @throws FileNotFoundException
+	 * @throws URISyntaxException 
 	 */
 	@Test
-	public void testWriteAccessToTargetFile() throws IOException, FileNotFoundException {
-		File file = new File("");
+	public void testWriteAccessToTargetFile() throws URISyntaxException, IOException, FileNotFoundException {
+		File resourceFolder;
+		resourceFolder = new File(this.getClass().getResource(File.separator).toURI());
+		fromFile = new File(resourceFolder, "from");
+		toFile = new File(resourceFolder, "to");
+		RandomAccessFile read = new RandomAccessFile(toFile, "rw"); 
+		FileChannel cha = read.getChannel();
 		byte[] array = new byte[10];
 		new Random().nextBytes(array);
 		String randomString = new String(array);
-		try (RandomAccessFile read = new RandomAccessFile(file, "r"); FileLock block = read.getChannel().lock()) {
-			read.write(randomString.getBytes());
+		FileLock block = null;
+		try {
+			block = read.getChannel().lock();
+		} catch (IOException e) {
+			read.close();
+			cha.close();	
+		}
+		read.write(randomString.getBytes());
+		block.release();
+
+		read.close();
+		cha.close();
+		/*
+		byte[] array = new byte[10];
+		new Random().nextBytes(array);
+		String randomString = new String(array);
+		try {
+			RandomAccessFile read = new RandomAccessFile(fromFile, "r"); 
+			FileLock block = read.getChannel().lock();
+			if (block != null) {
+				block.release();
+				read.close();
+				toFile.delete();
+				read.write(randomString.getBytes());
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 }
