@@ -90,10 +90,18 @@ public class LayoutGalerieTest {
 	 */
 	@Test
 	public void testNonExistingFile() throws IOException, FileNotFoundException {
-		File file = new File("");
-		if (!file.exists()) {
-			assertEquals("There is no such file", fromFile, toFile);
+		File resourceFolder;
+		try {
+			resourceFolder = new File(this.getClass().getResource(File.separator).toURI());
+			fromFile = new File(resourceFolder, "from");
+			toFile = new File(resourceFolder, "to");
+			if (fromFile.exists()) {
+				assertEquals("There is no such file", fromFile, toFile);
+			}
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
 		}
+
 	}
 
 	/**
@@ -104,10 +112,17 @@ public class LayoutGalerieTest {
 	 */
 	@Test
 	public void testExistenceCheck() throws FileNotFoundException, IOException {
-		File file = new File("");
-		if (file.exists()) {
-			galerieUnderTest.copyDir(fromFile, toFile);
-			assertTrue(file.exists());
+		File resourceFolder;
+		try {
+			resourceFolder = new File(this.getClass().getResource(File.separator).toURI());
+			fromFile = new File(resourceFolder, "from");
+			toFile = new File(resourceFolder, "to");
+			if (toFile.exists()) {
+				galerieUnderTest.copyDir(fromFile, toFile);
+				assertTrue(toFile.exists());
+			}
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
 		}
 	}
 
