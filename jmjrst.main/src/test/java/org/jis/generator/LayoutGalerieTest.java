@@ -113,12 +113,12 @@ public class LayoutGalerieTest {
 	 */
 	@Test
 	public void testExistenceCheck() throws FileNotFoundException, IOException {
-		File resourceFolder;
 		try {
+			File resourceFolder;
 			resourceFolder = new File(this.getClass().getResource(File.separator).toURI());
 			fromFile = new File(resourceFolder, "from");
 			toFile = new File(resourceFolder, "to");
-			if (toFile.exists()) {
+			if (toFile.exists() && fromFile.exists()) {
 				galerieUnderTest.copyDir(fromFile, toFile);
 				assertTrue(toFile.exists());
 			}
