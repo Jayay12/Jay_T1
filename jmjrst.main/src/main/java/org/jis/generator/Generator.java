@@ -58,7 +58,6 @@ import javax.swing.filechooser.FileSystemView;
 import org.jis.Main;
 import org.jis.options.Options;
 
-
 /**
  * @author <a href="http://www.jgeppert.com">Johannes Geppert</a>
  *
