@@ -32,6 +32,7 @@ repo/
 .checkstyle
 bin/
 target/
+jmjrst.main/target
 
 # IntelliJ IDE
 .idea/*
